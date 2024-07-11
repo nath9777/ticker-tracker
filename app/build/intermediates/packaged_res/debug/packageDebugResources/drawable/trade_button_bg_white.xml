@@ -1,0 +1,6 @@
+<!-- trade_button_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/white"/> <!-- Green background color -->
+    <corners android:radius="8dp"/> <!-- Rounded corners (adjust radius as needed) -->
+</shape>

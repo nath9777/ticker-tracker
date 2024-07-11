@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly Price Chart</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+</head>
+
+<body>
+<div id="container" style="width:100%; height:400px;"></div>
+
+<script>
+    async function fetchData(ticker) {
+        const currentDate = new Date().toISOString().split('T')[0];
+        const oneDayBeforeDate = new Date();
+        oneDayBeforeDate.setDate(oneDayBeforeDate.getDate() - 2);
+        const oneDayBeforeDateString = oneDayBeforeDate.toISOString().split('T')[0];
+
+
+        const summaryChartUrl = `https://atul-webtech-final-4.wl.r.appspot.com/api/summary-chart/${ticker}/${oneDayBeforeDateString}/${currentDate}`;
+
+        const quoteUrl = `https://atul-webtech-final-4.wl.r.appspot.com/api/quote/${ticker}`;
+
+
+        const [summaryResponse, quoteResponse] = await Promise.all([
+            fetch(summaryChartUrl),
+            fetch(quoteUrl)
+        ]);
+
+        if (!summaryResponse.ok || !quoteResponse.ok) {
+            throw new Error(`HTTP error! Status - Summary: ${summaryResponse.status}, Quote: ${quoteResponse.status}`);
+        }
+
+        const summaryData = await summaryResponse.json();
+        const quoteData = await quoteResponse.json();
+
+        const timestamps = summaryData.results.map(result => result.t);
+        const closePrices = summaryData.results.map(result => result.c);
+        const isPositive = parseFloat(quoteData.d) >= 0;
+
+        return { timestamps, closePrices, isPositive };
+    }
+
+    async function handleFetch(ticker) {
+        try {
+            const { timestamps, closePrices, isPositive } = await fetchData(ticker);
+            displayResultDiv(ticker, timestamps, closePrices, isPositive);
+        } catch (error) {
+            console.error('Error:', error.message);
+            displayErrorDiv('Error fetching data');
+        }
+    }
+
+    function displayResultDiv(ticker, timestamps, closePrices, isPositive) {
+        const resultContainer = document.getElementById('container');
+        resultContainer.style.width = '100%';
+        resultContainer.style.height = '100%';
+
+        Highcharts.chart('container', {
+            chart: {
+                type: 'line',
+
+                scrollablePlotArea: {
+                    minWidth: 500
+                }
+            },
+            title: {
+                text: `${ticker} Hourly Price Variation`,
+                style: {
+                    fontSize: '16px',
+                    color: '#666666'
+                }
+            },
+            xAxis: {
+                type: 'datetime',
+                labels: {
+                    formatter: function () {
+                        const date = Highcharts.dateFormat('%H:%M', this.value);
+                        if (date === '00:00') {
+                            return Highcharts.dateFormat('%e %b', this.value);
+                        } else {
+                            return date;
+                        }
+                    }
+                }
+            },
+            yAxis: {
+                opposite: true,
+                title: {
+                    text: null
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                name: 'Close Price',
+                marker: {
+                    enabled: false
+                },
+                color: isPositive ? '#198754' : '#ff0000',
+                data: timestamps.map((timestamp, index) => [timestamp, closePrices[index]])
+            }]
+        });
+    }
+
+    function displayErrorDiv(errorMessage) {
+        const resultContainer = document.getElementById('container');
+        resultContainer.innerHTML = `<div>Error: ${errorMessage}</div>`;
+    }
+
+    const searchText = Android.getSearchText();
+    handleFetch(searchText);
+</script>
+</body>
+
+</html>

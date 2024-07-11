@@ -1,0 +1,378 @@
+[
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_twitter.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_twitter.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_recommendations.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/recommendations.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/xml_network_security_config.xml.flat",
+        "source": "com.example.stocks.app-main-34:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.stocks.app-main-34:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/xml_backup_rules.xml.flat",
+        "source": "com.example.stocks.app-main-34:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_twitter.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_twitter.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_item_stock.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/item_stock.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_facebook.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_facebook.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_twitter_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_twitter_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_facebook.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_facebook.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_star_border.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/star_border.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_facebook.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_facebook.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_rounded_corner_background.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/rounded_corner_background.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_facebook_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_facebook_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_facebook_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_facebook_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_twitter.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_twitter.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_trade_button_bg_white.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/trade_button_bg_white.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_chrome_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_chrome_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_facebook_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_facebook_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_close.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/close.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_chrome.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_chrome.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_search.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/search.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_twitter_x_icon.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/twitter_x_icon.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_ic_facebook_foreground.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/ic_facebook_foreground.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_trade_button_bg.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/trade_button_bg.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_news_item_regular.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/news_item_regular.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_twitter_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_twitter_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_facebook.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/facebook.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-anydpi-v26_ic_twitter_round.xml.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-anydpi-v26/ic_twitter_round.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_chart_hour.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/chart_hour.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_ic_chrome_foreground.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/ic_chrome_foreground.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_twitter.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_twitter.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_item_portfolio.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/item_portfolio.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_dialog_news_detail.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/dialog_news_detail.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_activity_main.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_facebook_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_facebook_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_ic_twitter_foreground.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/ic_twitter_foreground.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_chrome.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_chrome.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_chrome_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_chrome_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_launcher.png.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/launcher.png"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_chart_historical.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/chart_historical.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_full_star.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/full_star.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_news_item_top.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/news_item_top.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_fragment_historical_chart.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/fragment_historical_chart.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_right_arrow.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/right_arrow.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_twitter_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_twitter_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_dialog_trade_success.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/dialog_trade_success.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-anydpi-v26_ic_twitter.xml.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-anydpi-v26/ic_twitter.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-anydpi-v26_ic_chrome_round.xml.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-anydpi-v26/ic_chrome_round.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_facebook_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_facebook_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_chrome.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_chrome.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_arrow_left.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/arrow_left.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-anydpi-v26_ic_facebook.xml.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-anydpi-v26/ic_facebook.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_placeholder_image.png.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/placeholder_image.png"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_chrome.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_chrome.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_chrome_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_chrome_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_activity_splash.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_twitter.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_twitter.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_activity_search_result.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/activity_search_result.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_twitter_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_twitter_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_trending_down.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/trending_down.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_dialog_trade.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/dialog_trade.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/layout_fragment_hourly_chart.xml.flat",
+        "source": "com.example.stocks.app-main-34:/layout/fragment_hourly_chart.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_facebook.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_facebook.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-anydpi-v26_ic_facebook_round.xml.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-anydpi-v26/ic_facebook_round.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xhdpi_ic_chrome_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xhdpi/ic_chrome_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-hdpi_ic_chrome_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-hdpi/ic_chrome_round.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_delete.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/delete.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_trending_up.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/trending_up.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_chrome.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/chrome.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-anydpi-v26_ic_chrome.xml.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-anydpi-v26/ic_chrome.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_chrome.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_chrome.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/drawable_cell_background.xml.flat",
+        "source": "com.example.stocks.app-main-34:/drawable/cell_background.xml"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-mdpi_ic_facebook.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-mdpi/ic_facebook.webp"
+    },
+    {
+        "merged": "com.example.stocks.app-debug-32:/mipmap-xxhdpi_ic_twitter_round.webp.flat",
+        "source": "com.example.stocks.app-main-34:/mipmap-xxhdpi/ic_twitter_round.webp"
+    }
+]

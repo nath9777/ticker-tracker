@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly Price Chart</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+</head>
+
+<body>
+<div id="container" style="width:100%; height:400px;"></div>
+
+<script>
+    async function fetchData(ticker) {
+
+        const url = `https://atul-webtech-final-4.wl.r.appspot.com/api/recommendation-trends/${ticker}`;
+
+        console.log("URL: ", url);
+
+        const resp = await fetch(url);
+
+        if (!resp.ok) {
+            throw new Error(`HTTP error! Status: ${resp.status}`);
+        }
+
+        return await resp.json();
+    }
+
+    async function handleFetch(ticker) {
+        try {
+            const response = await fetchData(ticker);
+            displayResultDiv(response);
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
+    function displayResultDiv(response) {
+        const resultContainer = document.getElementById('container');
+        resultContainer.style.width = '100%';
+        resultContainer.style.height = '100%';
+
+        if (response) {
+            console.log("Checking results: ", response.results);
+            const categories = response.map(entry => entry.period);
+
+            const seriesData = [
+                {
+                    name: 'Strong Buy',
+                    data: response.map(entry => entry.strongBuy)
+                },
+                {
+                    name: 'Buy',
+                    data: response.map(entry => entry.buy)
+                },
+                {
+                    name: 'Hold',
+                    data: response.map(entry => entry.hold)
+                },
+                {
+                    name: 'Sell',
+                    data: response.map(entry => entry.sell)
+                },
+                {
+                    name: 'Strong Sell',
+                    data: response.map(entry => entry.strongSell)
+                }
+            ];
+
+            Highcharts.chart('container', {
+                chart: {
+                    height: 500,
+                    zoomType: 'x',
+                    type: 'column'
+                },
+                title: {
+                    text: 'Recommendation Trends',
+                    align: 'center'
+                },
+                xAxis: {
+                    categories: categories.map(label => label.substring(0, 7))
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '#Analysis'
+                    },
+                    stackLabels: {
+                        enabled: false
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<b>{point.x}</b><br/>',
+                    pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                },
+                series: seriesData,
+                colors: ['#207943', '#1fc15f', '#c2951e', '#e56968', '#8b3936'],
+                credits: {
+                    enabled: false
+                }
+            });
+        } else {
+            resultContainer.innerHTML = `<div>Error: No data available</div>`;
+        }
+    }
+
+    const searchText = Android.getSearchText();
+    console.log('Checking ticker:', searchText);
+    handleFetch(searchText);
+</script>
+</body>
+
+</html>

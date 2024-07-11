@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly Price Chart</title>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/stock/indicators/indicators.js"></script>
+    <script src="https://code.highcharts.com/stock/indicators/volume-by-price.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+
+
+</head>
+
+<body>
+<div id="container" style="width:100%; height:400px;"></div>
+
+<script>
+
+    async function fetchData(ticker) {
+        const currentDate = new Date().toISOString().split('T')[0];
+        const oneYearBeforeDate = new Date();
+        oneYearBeforeDate.setFullYear(oneYearBeforeDate.getFullYear() - 1);
+        const oneYearBeforeDateString = oneYearBeforeDate.toISOString().split('T')[0];
+
+        const url = `https://atul-webtech-final-4.wl.r.appspot.com/api/summary-chart-tab/${ticker}/${oneYearBeforeDateString}/${currentDate}`;
+
+
+
+        const resp = await fetch(url);
+
+        if (!resp.ok) {
+            throw new Error(`HTTP error! Status: ${resp.status}`);
+        }
+
+        return await resp.json();
+    }
+
+    async function handleFetch(ticker) {
+        try {
+            const response = await fetchData(ticker);
+            displayResultDiv(response);
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
+    function displayResultDiv(response) {
+        const resultContainer = document.getElementById('container');
+        resultContainer.style.width = '100%';
+        resultContainer.style.height = '100%';
+
+        if (response) {
+
+            const ohlcData = [];
+            const volumeData = [];
+
+            response.results.forEach(item => {
+                const timestamp = item.t;
+                const open = item.o;
+                const high = item.h;
+                const low = item.l;
+                const close = item.c;
+                const volume = item.v;
+
+                ohlcData.push([timestamp, open, high, low, close]);
+
+                volumeData.push([timestamp, volume]);
+            });
+
+            Highcharts.stockChart('container', {
+                chart: {
+                    zoomType: 'x',
+                    height: 400
+                },
+                rangeSelector: {
+                    buttons: [{
+                        type: 'month',
+                        count: 1,
+                        text: '1m'
+                    }, {
+                        type: 'month',
+                        count: 3,
+                        text: '3m'
+                    }, {
+                        type: 'month',
+                        count: 6,
+                        text: '6m'
+                    }, {
+                        type: 'ytd',
+                        text: 'YTD'
+                    },
+                    {
+                        type: 'year',
+                        count: 1,
+                        text: '1y'
+                    },
+                    {
+                        type: 'all',
+                        text: 'All'
+                    }],
+                    selected: 2,
+                    inputEnabled: true,
+                },
+                title: {
+                    text: `${response.ticker} Historical`,
+                },
+                subtitle: {
+                    text: 'With SMA and Volume by Price technical indicators'
+                },
+                series: [
+                    {
+                        type: 'candlestick',
+                        name: `${response.ticker}`,
+                        id: `${response.ticker}`,
+                        data: ohlcData
+                    },
+                    {
+                        type: 'column',
+                        name: 'Volume',
+                        id: 'volume',
+                        data: volumeData,
+                        yAxis: 1
+                    },
+                    {
+                        type: 'vbp',
+                        linkedTo: `${response.ticker}`,
+                        params: {
+                            volumeSeriesID: 'volume'
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        zoneLines: {
+                            enabled: false
+                        }
+                    },
+                    {
+                        type: 'sma',
+                        linkedTo: `${response.ticker}`,
+                        zIndex: 1,
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        startOnTick: false,
+                        endOnTick: false,
+                        labels: {
+                            align: 'right',
+                            x: -3
+                        },
+                        title: {
+                            text: 'OHLC'
+                        },
+                        height: '60%',
+                        lineWidth: 2,
+                        resize: {
+                            enabled: true
+                        },
+                        opposite: true
+                    },
+                    {
+                        labels: {
+                            align: 'right',
+                            x: -3
+                        },
+                        title: {
+                            text: 'Volume'
+                        },
+                        top: '65%',
+                        height: '35%',
+                        offset: 0,
+                        lineWidth: 2,
+                        opposite: true
+                    }
+                ],
+                tooltip: {
+                    split: true
+                },
+                plotOptions: {
+                    series: {
+                        dataGrouping: {
+                            units: [
+                                [
+                                    'week',
+                                    [1]
+                                ],
+                                [
+                                    'month',
+                                    [1, 2, 3, 4, 6]
+                                ]
+                            ]
+                        }
+                    }
+                }
+            });
+        } else {
+            resultContainer.innerHTML = `<div>Error: No data available</div>`;
+        }
+    }
+
+    const searchText = Android.getSearchText();
+    console.log('Checking ticker:', searchText);
+    handleFetch(searchText);
+</script>
+</body>
+
+</html>

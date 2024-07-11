@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly Price Chart</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+</head>
+
+<body>
+<div id="container" style="width:100%; height:400px;"></div>
+
+<script>
+    async function fetchData(ticker) {
+
+        const url = `https://atul-webtech-final-4.wl.r.appspot.com/api/earnings/${ticker}`;
+
+        console.log("URL: ", url);
+
+        const resp = await fetch(url);
+
+        if (!resp.ok) {
+            throw new Error(`HTTP error! Status: ${resp.status}`);
+        }
+
+        return await resp.json();
+    }
+
+    async function handleFetch(ticker) {
+        try {
+            const response = await fetchData(ticker);
+            displayResultDiv(response);
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
+    function displayResultDiv(response) {
+        const resultContainer = document.getElementById('container');
+        resultContainer.style.width = '100%';
+        resultContainer.style.height = '100%';
+
+        if (response) {
+            console.log("Checking results: ", response.results);
+
+            const actualData = response.map(item => [item.period, item.actual]);
+            const estimateData = response.map(item => [item.period, item.estimate]);
+
+            Highcharts.chart('container', {
+                chart: {
+                    height: 500,
+                    type: 'spline',
+                    zoomType: 'x',
+                    inverted: false
+                },
+                title: {
+                    text: 'Historical EPS Surprises',
+                    align: 'center'
+                },
+                xAxis: {
+                    categories: response.map(item => item.period),
+                    labels: {
+                        align: 'center',
+                        rotation: -25,
+                        whiteSpace: "nowrap",
+                        textOverflow: "none",
+                        autoRotation: false,
+                        overflow: false,
+                        formatter: function () {
+                            const index = this.pos;
+                            const period = this.axis.categories[index];
+                            const surpriseValue = response[index].surprise;
+                            return `${period}<br>Surprise: ${surpriseValue}`;
+                        }
+                    },
+
+                },
+                yAxis: {
+                    title: {
+                        text: 'Quaterly EPS'
+                    },
+                    labels: {
+                        format: '{value}'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        color: 'gray',
+                        width: 1,
+                        zIndex: 3
+                    }]
+                },
+                tooltip: {
+                    crosshairs: true,
+                    shared: true
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            radius: 4,
+                            lineColor: '#666666',
+                            lineWidth: 1
+
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Actual',
+                    data: actualData
+                }, {
+                    name: 'Estimate',
+                    data: estimateData
+                }],
+                credits: {
+                    enabled: false
+                }
+            });
+        } else {
+            resultContainer.innerHTML = `<div>Error: No data available</div>`;
+        }
+    }
+
+    const searchText = Android.getSearchText();
+    console.log('Checking ticker:', searchText);
+    handleFetch(searchText);
+
+</script>
+</body>
+
+</html>
